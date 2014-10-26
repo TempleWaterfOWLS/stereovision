@@ -1,0 +1,32 @@
+Optimized and debug versions of examples can be built using the macro BUILD_EXAMPLE defined at command line.
+This macro can take two values, default and default.dbg, respectively for optimized and debug versions.
+
+Hereinafter an usage example:
+
+examples$ make BUILD_EXAMPLE=default 
+
+this command will build all examples under examples/common/(convert16image, grabstereo, stereo, ...)
+
+However, optimized version of examples are also built simply by typing 'make' at command line
+
+examples$ make
+
+to copy built examples into the bin folder :
+
+examples$ make BUILD_EXAMPLE=default installbin
+
+to clean built examples :
+
+examples$ make BUILD_EXAMPLE=default clean
+
+to clean bin folder :
+
+examples$ make BUILD_EXAMPLE=default cleanbin
+
+see Makefile for each example for details
+
+Some examples (e.g. grabstereo, etc) depend on flycapture. Download and install Flycapture2 before running or building examples 
+(see Point Grey Research support web page). Moreover, these examples require a Bumblebee camera to be connected.
+
+Moreover, some examples (e.g. stereo, customizedstereo, etc) require input arguments. If no arguments are provided, examples will try to run with default arguments.
+
